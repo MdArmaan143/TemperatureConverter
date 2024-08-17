@@ -4,23 +4,33 @@ body {
     font-family: Arial, sans-serif;
     overflow: hidden;
     transition: background-color 1s;
+    perspective: 1000px; /* Adds perspective to the container */
 }
 h1 {
     text-align: center;
     margin-top: 20px;
+    font-size: 2em;
+    color: #fff;
 }
 #container {
     text-align: center;
     background-color: #1abc9c;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 30px;
+    border-radius: 15px;
     max-width: 90%;
     margin: 0 auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: rotateX(10deg); /* Adds a slight 3D rotation */
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+#container:hover {
+    transform: rotateX(0deg) scale(1.05); /* Enhances the 3D effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 .input-div {
     display: inline-block;
     margin: 10px;
+    transform: translateZ(20px); /* Moves elements outwards for a 3D effect */
 }
 .inp {
     padding: 10px;
@@ -30,6 +40,12 @@ h1 {
     text-align: center;
     border-radius: 5px;
     border: 2px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+}
+.inp:focus {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    outline: none;
 }
 label {
     font-size: 1.2em;
